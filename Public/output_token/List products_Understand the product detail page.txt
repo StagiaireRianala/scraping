@@ -1,0 +1,6 @@
+Title: List products
+Subtitle: Understand the product detail page
+
+contents 1:
+If you ’ ve shopped in the Amazon store , you ’ ll recognize the product detail page . It ’ s where customers find all relevant information about an item . 1 . Title 200 characters max , capitalize the first letter of every word 2 . Images 500 x 500 or 1,000 x 1,000 pixels to increase listing quality 3 . Variations Such as different colors , scents , or sizes 4 . Bullet points Short , descriptive sentences highlighting key features and benefits 5 . Featured offer ( `` Buy Box '' ) The featured offer on a detail page . Customers can add to their cart or “ Buy Now ” 6 . Other offers The same product sold by multiple sellers offering a different price , shipping options , etc . 7 . Description Keywords improve the chances that people will find your listing Video 8:25 Intro to product detail pages Learn what a product detail page is and who can create , suggest updates , and match offers to one . Learn best practices for each key element of a product detail page in the Amazon store .
+----------------------------------------

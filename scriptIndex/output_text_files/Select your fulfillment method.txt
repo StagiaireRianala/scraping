@@ -1,0 +1,15 @@
+Titre : Select your fulfillment method
+Contenus :
+  - You have two basic options for getting customers their stuff:
+  - You can fulfill orders yourself, maintaining your own inventory and shipping products directly to customers. We call this Fulfilled by Merchant.
+  - You can send your inventory to Amazon and have us pick, pack, and deliver products through Fulfillment by Amazon (FBA). FBA also takes care of customer service and returns.
+  - Each method has its own benefits—and you can decide which one is right for each product you sell. If you’re a current seller, you can also use our Revenue Calculator to compare estimates for FBA and your own fulfillment method.
+  - Considering FBA?
+  - Video
+  - 6:27
+  - Introduction on How to Ship Products on Your Own
+  - In this video you will get an overview on merchant fulfilled shipping, guidelines on packaging, understand your shipping / cancellation metrics, guidelines to maintain positive customer experience.
+  - Video
+  - 5:12
+  - How Fulfillment by Amazon (FBA) works
+  - Learn how to use Amazon FBA to offer Prime shipping to your customers and have Amazon pick, pack, and ship orders on your behalf. In this video, you’ll learn how FBA works and where to access additional FBA tools and resources.

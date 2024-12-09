@@ -1,0 +1,24 @@
+Titre : Monitor your performance
+Contenus :
+  - To sell in the Amazon store, you’re required to comply with all applicable laws and Amazon policies. Our Account Health dashboard provides an overview of your account’s adherence to policies and various performance targets.
+
+
+Titre : Customer Service Performance
+Contenus :
+    - Your customer-service performance is measured using what we call an Order Defect Rate (ODR). Your ODR is the percentage of your orders with one or more indicators of poor customer service. That could be negative customer feedback or a credit-card chargeback. We require sellers to maintain an ODR under 1%.
+    - Looking for help with customer service?
+
+
+Titre : Account Health Rating
+Contenus :
+    - We provide sellers an overview of their compliance with key Amazon selling policies, including our intellectual-property, authenticity, listing, and restricted-product policies. To maintain a ‘Good’ rating, make sure to address any policy violations listed on your Account Health dashboard. If your rating is ‘At Risk’ or ‘Critical’, your account may be at risk of deactivation.
+
+
+Titre : Shipping Performance
+Contenus :
+    - You can use three metrics to help assess the health of the orders you fulfill directly:
+    - Your Late Shipment Rate (LSR) is the percentage of your seller-fulfilled orders that have a shipping confirmation after their expected shipping date. You should aim to keep it below 4%.
+    - Your Pre-fulfillment Cancel Rate (CR) is the percentage of seller-fulfilled orders you cancel. You should aim to keep it below 2.5%.
+    - Your Valid Tracking Rate (VTR) is the percentage of packages from your seller-fulfilled orders with a valid tracking number. You should aim to keep it above 95%.
+
+

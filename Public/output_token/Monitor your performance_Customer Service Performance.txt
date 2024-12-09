@@ -1,0 +1,6 @@
+Title: Monitor your performance
+Subtitle: Customer Service Performance
+
+contents 1:
+Your customer-service performance is measured using what we call an Order Defect Rate ( ODR ) . Your ODR is the percentage of your orders with one or more indicators of poor customer service . That could be negative customer feedback or a credit-card chargeback . We require sellers to maintain an ODR under 1 % . Looking for help with customer service ?
+----------------------------------------

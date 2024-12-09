@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgrespw"
+      POSTGRES_DB: "rag"
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend_network
+
+  fastapi:
+    build:
+      context: ./backend # Indique le dossier contenant le code FastAPI et Dockerfile
+      dockerfile: Dockerfile
+    container_name: fastapi_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgrespw@postgres:5432/rag
+    networks:
+      - backend_network
+
+volumes:
+  postgres_data:
+
+networks:
+  backend_network:
+    driver: bridge

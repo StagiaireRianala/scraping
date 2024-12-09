@@ -1,0 +1,6 @@
+Title: List products
+Subtitle: Find or obtain a product ID (GTIN)
+
+contents 1:
+The primary tool we use to pair a seller ’ s offer with the correct product detail page is a product ID , also called a Global Trade Item Number ( GTIN ) . It can often be found on packaging above or below the product ’ s barcode . The most common GTIN used by Amazon sellers is a UPC , but you might also find an ISBN , EAN , or JAN on your product .
+----------------------------------------

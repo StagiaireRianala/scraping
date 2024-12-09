@@ -1,0 +1,6 @@
+Title: Monitor your performance
+Subtitle: Account Health Rating
+
+contents 1:
+We provide sellers an overview of their compliance with key Amazon selling policies , including our intellectual-property , authenticity , listing , and restricted-product policies . To maintain a ‘ Good ’ rating , make sure to address any policy violations listed on your Account Health dashboard . If your rating is ‘ At Risk ’ or ‘ Critical ’ , your account may be at risk of deactivation .
+----------------------------------------

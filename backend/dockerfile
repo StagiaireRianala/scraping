@@ -1,0 +1,18 @@
+## Étape 1 : Utiliser une image de base
+FROM python:3.10-slim
+
+# Étape 2 : Installer les dépendances
+WORKDIR /app
+RUN pip install --upgrade pip
+
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Étape 3 : Copier le code de l'application
+COPY . /app/
+
+# Étape 4 : Exposer le port sur lequel FastAPI s'exécute
+EXPOSE 8000
+
+# Étape 5 : Commande pour démarrer l'application FastAPI
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

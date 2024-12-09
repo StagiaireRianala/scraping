@@ -1,0 +1,6 @@
+Title: Monitor your performance
+Subtitle: Shipping Performance
+
+contents 1:
+You can use three metrics to help assess the health of the orders you fulfill directly : Your Late Shipment Rate ( LSR ) is the percentage of your seller-fulfilled orders that have a shipping confirmation after their expected shipping date . You should aim to keep it below 4 % . Your Pre-fulfillment Cancel Rate ( CR ) is the percentage of seller-fulfilled orders you cancel . You should aim to keep it below 2.5 % . Your Valid Tracking Rate ( VTR ) is the percentage of packages from your seller-fulfilled orders with a valid tracking number . You should aim to keep it above 95 % . To sell in the Amazon store , you ’ re required to comply with all applicable laws and Amazon policies . Our Account Health dashboard provides an overview of your account ’ s adherence to policies and various performance targets .
+----------------------------------------

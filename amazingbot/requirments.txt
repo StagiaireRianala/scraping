@@ -1,0 +1,6 @@
+pip install authlib
+npm install @react-oauth/google
+npm install react-apple-signin-auth
+npm install lucide-react
+npm install @radix-ui/react-avatar
+npm install class-variance-authority tailwind-variants
