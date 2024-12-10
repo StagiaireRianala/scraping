@@ -1,15 +1,11 @@
 "use client"; // Indique que ce composant est côté client
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // Importer le routeur de Next.js
-import Image from "next/image"; // Importer le composant Image de Next.js
-import Link from "next/link";
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -21,10 +17,12 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
+import login from "./LoginPopup"; // Importez le composant LoginPopup
 
 export default function AuthTabs() {
   const [formData, setFormData] = useState({ name: "", email: "", mdp: "" });
   const [response, setResponse] = useState("");
+  const [showLoginPopup, setShowLoginPopup] = useState(false); // État pour gérer la popup
   const router = useRouter(); // Initialiser le routeur
 
   const handleRegisterSubmit = async (e) => {
@@ -42,8 +40,8 @@ export default function AuthTabs() {
       if (res.ok) {
         setResponse("Inscription réussie !");
         setTimeout(() => {
-          router.push("/login"); // Rediriger vers la page de login après succès
-        }, 2000);
+          setShowLoginPopup(true); // Afficher la popup après succès
+        }, 1000);
       } else {
         if (data.detail && Array.isArray(data.detail)) {
           const errorMessages = data.detail.map((err) => err.msg).join(", ");
@@ -58,34 +56,8 @@ export default function AuthTabs() {
     }
   };
 
-  const [credentials, setCredentials] = useState({ username: "", password: "" });
-
-  const handleLoginSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch("http://localhost:8000/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams(credentials),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        localStorage.setItem("token", data.access_token); // Stocker le token
-        setResponse("Connexion réussie !");
-        router.push("/chat"); // Rediriger vers la page chat
-      } else {
-        setResponse(data.detail || "Erreur de connexion");
-      }
-    } catch (error) {
-      console.error(error);
-      setResponse("Erreur de connexion au backend");
-    }
-  };
-
   return (
-    <div className="min-h-screen  flex items-center justify-center bg-gradient-to-r from-custom-black to-custom-purple">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-custom-black to-custom-purple">
       <Tabs defaultValue="register" className="w-[400px]">
         {/* Onglets pour naviguer entre Inscription et Connexion */}
         <TabsList className="grid w-full grid-cols-2">
@@ -138,16 +110,6 @@ export default function AuthTabs() {
                     }
                   />
                 </div>
-                <div className="space-y-1">
-                  <Label htmlFor="password">Confirmez le mot de passe</Label>
-                  <Input
-                    
-                    type="password"
-                    placeholder="Confirmez votre mot de passe"
-                    value={formData.mdp}
-                   
-                  />
-                </div>
                 <Button type="submit" className="w-full">
                   S'inscrire
                 </Button>
@@ -165,49 +127,15 @@ export default function AuthTabs() {
               <CardDescription>Connectez-vous à votre compte.</CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleLoginSubmit} className="space-y-4">
-                <div>
-                  <Label htmlFor="username">Email</Label>
-                  <Input
-                    id="username"
-                    type="text"
-                    placeholder="Email"
-                    value={credentials.username}
-                    onChange={(e) =>
-                      setCredentials({
-                        ...credentials,
-                        username: e.target.value,
-                      })
-                    }
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="password">Mot de passe</Label>
-                  <Input
-                    id="password"
-                    type="password"
-                    placeholder="Mot de passe"
-                    value={credentials.password}
-                    onChange={(e) =>
-                      setCredentials({
-                        ...credentials,
-                        password: e.target.value,
-                      })
-                    }
-                  />
-                </div>
-                <Button type="submit" className="w-full">
-                  Se connecter
-                </Button>
-              </form>
-              <Link href="/register" className="mt-4 block text-center">
-                Vous n'avez pas de compte ? S'inscrire
-              </Link>
-              <p className="text-red-500 mt-4">{response}</p>
+              {/* Vous pouvez laisser le formulaire de connexion ici si nécessaire */}
+              <p>Connectez-vous ici !</p>
             </CardContent>
           </Card>
         </TabsContent>
       </Tabs>
+
+      {/* Afficher la popup de connexion */}
+      {showLoginPopup && <LoginPopup onClose={() => setShowLoginPopup(false)} />}
     </div>
   );
 }

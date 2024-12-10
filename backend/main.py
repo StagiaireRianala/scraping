@@ -16,7 +16,7 @@ async def root():
 # Configuration du CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Frontend URL
+    allow_origins=["*"],  # Frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -29,8 +29,12 @@ async def register_user(user: schemas.UtilisateurCreate, db: Session = Depends(d
     """
     Enregistre un nouvel utilisateur après avoir vérifié que le nom d'utilisateur n'est pas déjà pris.
     """
+       
+    print( "Hello, user !")
     # Vérifie si le nom d'utilisateur existe déjà
     db_user = db.query(models.Utilisateur).filter(models.Utilisateur.email == user.email).first()
+
+    print(db_user)
     if db_user:
         raise HTTPException(status_code=400, detail="Username already registered")
     

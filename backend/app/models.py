@@ -13,7 +13,7 @@ class Utilisateur(Base):
     name = Column(String(255), nullable=False)
     email = Column(String(255), unique=True, nullable=False)
     mdp = Column(String(255), nullable=False)
-    date = Column(TIMESTAMP, default=datetime.utcnow)
+    date_creation = Column(TIMESTAMP, default=datetime.utcnow)
     status = Column(String(50), default="active")
 
 class Conversation(Base):

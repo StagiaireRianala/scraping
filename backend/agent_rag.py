@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from langchain.prompts import PromptTemplate
 from langchain.agents import AgentExecutor, create_openai_tools_agent, Tool
 from langchain.embeddings import OpenAIEmbeddings
@@ -16,7 +18,8 @@ pinecone.init(api_key=PINECONE_API_KEY, environment="us-east-1")
 index = Pinecone.from_existing_index(index_name=INDEX_NAME, embedding=OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY))
 
 # Définir l'outil Pinecone
-def search_pinecone_tool(query: str):
+def search_pinecone_tool(query):
+
     """Recherche dans Pinecone les documents pertinents pour la requête."""
     result = index.similarity_search(query, top_k=3)  # Top 3 documents pertinents
     return "\n".join([doc.page_content for doc in result])

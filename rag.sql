@@ -3,7 +3,7 @@ CREATE DATABASE rag;
 \c rag
 
 CREATE TABLE utilisateur (
-    id_utilisateur SERIAL PRIMARY KEY,
+    id_utilisateur SERIAL PRIMARY KEY  , 
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     mdp VARCHAR(255) NOT NULL,

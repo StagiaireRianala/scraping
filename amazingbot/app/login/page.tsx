@@ -1,11 +1,9 @@
 "use client"; // Assurez-vous d'ajouter cette ligne en haut de votre fichier.
 import Link from "next/link";
-
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 
-export default function Login() {
+export default function LoginPopup({ onClose }) {
   const [credentials, setCredentials] = useState({ username: "", password: "" });
   const [response, setResponse] = useState("");
   const router = useRouter(); // Utiliser le routeur de Next.js
@@ -35,62 +33,57 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="w-full max-w-4xl flex bg-white shadow-lg rounded-lg overflow-hidden">
-        {/* Section de gauche : formulaire */}
-        <div className="w-full md:w-1/2 p-8">
-          <h1 className="text-2xl text-center font-bold text-gray-800 mt-10 text-lg, md:text-2xl">Connexion</h1>
-          <p className="text-gray-600 text-center mt-2  mb-6">Veuillez entrer vos informations pour continuer.</p>
-          <form onSubmit={handleSubmit} className="space-y-4 mb-2 mt-10">
-            <div>
-              <input
-                type="text"
-                placeholder="Email"
-                value={credentials.username}
-                onChange={(e) =>
-                  setCredentials({ ...credentials, username: e.target.value })
-                }
-                className="w-full text-black px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700"
-              />
-            </div>
-            <div>
-              <input
-                type="password"
-                placeholder="Mot de passe"
-                value={credentials.password}
-                onChange={(e) =>
-                  setCredentials({ ...credentials, password: e.target.value })
-                }
-                className="w-full text-black px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full  bg-gray-700 text-white py-2 rounded-md hover:bg-gray-900 transition"
-            >
-              Se connecter
-            </button>
-          </form>
-              
-          <Link href="/register"> {/* Modification du lien pour pointer vers /login */}
-            <button className="w-full  bg-gray-700 text-white py-2 rounded-md hover:bg-gray-900 transition">
-              S'inscrire 
-            </button>
-          </Link>
-          
-            <p className="mt-4 text-sm text-gray-600">{response}</p>
-        </div>
-
-        {/* Section de droite : image */}
-        <div className="hidden md:flex md:w-1/2 w-11 bg-custom items-center justify-center">
-          <Image
-            src="/phone.png" // Modifiez le chemin si nécessaire
-            alt="Connexion à Amazing Bot"
-            width={300}
-            height={300}
-            className="rounded-xl"
-          />
-        </div>
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      {/* Popup container */}
+      <div className="bg-white w-full max-w-md p-6 rounded-lg shadow-lg">
+        <button
+          onClick={onClose}
+          className="text-gray-400 hover:text-gray-600 float-right text-xl"
+        >
+          &times; {/* Bouton de fermeture */}
+        </button>
+        <h1 className="text-2xl font-bold text-gray-800 text-center mt-2">
+          Connexion
+        </h1>
+        <p className="text-gray-600 text-center mt-2 mb-6">
+          Veuillez entrer vos informations pour continuer.
+        </p>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <input
+              type="text"
+              placeholder="Email"
+              value={credentials.username}
+              onChange={(e) =>
+                setCredentials({ ...credentials, username: e.target.value })
+              }
+              className="w-full text-black px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700"
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              placeholder="Mot de passe"
+              value={credentials.password}
+              onChange={(e) =>
+                setCredentials({ ...credentials, password: e.target.value })
+              }
+              className="w-full text-black px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-gray-700 text-white py-2 rounded-md hover:bg-gray-900 transition"
+          >
+            Se connecter
+          </button>
+        </form>
+        <Link href="/inscrit">
+          <button className="w-full mt-4 bg-gray-700 text-white py-2 rounded-md hover:bg-gray-900 transition">
+            S'inscrire
+          </button>
+        </Link>
+        <p className="mt-4 text-sm text-gray-600">{response}</p>
       </div>
     </div>
   );

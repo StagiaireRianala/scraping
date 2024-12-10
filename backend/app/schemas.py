@@ -20,7 +20,7 @@ class UtilisateurOut(BaseModel):
     id_utilisateur: int
     name: str
     email: str
-    date_creation: datetime = Field(alias="date")
+    date_creation: datetime = Field(alias="date_creation", default=datetime.now())
     status: str
 
     class Config:
