@@ -33,9 +33,9 @@ export default function LoginPopup({ onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div className="fixed inset-0 flex items-center  justify-center bg-black bg-opacity-50 z-50">
       {/* Popup container */}
-      <div className="bg-white w-full max-w-md p-6 rounded-3xl		 shadow-lg">
+      <div className="bg-white w-full max-w-md p-6 rounded-s-3xl	 shadow-lg">
         <button
           onClick={onClose}
           className="text-gray-400 hover:text-gray-600 float-right text-xl"

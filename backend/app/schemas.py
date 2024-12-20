@@ -1,6 +1,7 @@
 from pydantic import BaseModel, EmailStr,Field
 from datetime import datetime
 from typing import Optional
+
 class MessageCreate(BaseModel):
     id_conversation: int
     sender: str
@@ -29,3 +30,6 @@ class UtilisateurOut(BaseModel):
 class Token(BaseModel):
     access_token: str
     token_type: str
+
+class QuestionRequest(BaseModel):
+    question: str

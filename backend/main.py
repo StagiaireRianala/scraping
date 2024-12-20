@@ -94,3 +94,16 @@ def verify_token(token: str = Depends(oauth2_scheme)):
 async def get_protected_data(user: dict = Depends(verify_token)):
     return {"name": user["sub"]}  # Retourne le nom ou d'autres données de l'utilisateur
 
+from app.agent_rag import rag_agent
+
+
+@app.post("/ask")
+async def ask_question(query: str):
+    """
+    Route pour interroger l'agent RAG.
+    """
+    try:
+        response = rag_agent(query)
+        return {"response": response}
+    except Exception as e:
+        return {"error": str(e)}
